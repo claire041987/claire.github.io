@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Trading Dashboard | Insights Style</title>
+    <style>
+        :root {
+            --primary-color: #002D5B; /* 네이비 톤 */
+            --bg-color: #F8F9FA;
+            --card-bg: #FFFFFF;
+            --text-main: #333333;
+            --accent-green: #28A745;
+            --accent-red: #DC3545;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0; padding: 0; color: var(--text-main);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            margin: 2rem auto;
+        }
+
+        /* Account Info Grid */
+        .account-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .card h3 {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .card .value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Main Table Style */
+        .history-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th {
+            text-align: left;
+            border-bottom: 2px solid #eee;
+            padding: 1rem;
+            color: #888;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .status-win { color: var(--accent-green); font-weight: bold; }
+        .status-loss { color: var(--accent-red); font-weight: bold; }
+
+    </style>
+</head>
+<body>
+
+<nav>
+    <div style="font-size: 1.5rem; font-weight: bold;">INSIGHTS | AutoTrader</div>
+    <div>2026-01-02 | <span style="color: #4CAF50;">● Connected</span></div>
+</nav>
+
+<div class="container">
+    
+    <div class="account-grid">
+        <div class="card">
+            <h3>Total Balance</h3>
+            <div class="value">$16,449.93</div>
+        </div>
+        <div class="card">
+            <h3>Net Investment</h3>
+            <div class="value">$10,000.00</div>
+        </div>
+        <div class="card">
+            <h3>Total ROI</h3>
+            <div class="value" style="color: var(--accent-green);">+64.50%</div>
+        </div>
+        <div class="card">
+            <h3>Trading Days</h3>
+            <div class="value">47 Days</div>
+        </div>
+    </div>
+
+    <div class="card" style="height: 300px; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; background: #eee;">
+        <p style="color: #999;">[ 누적 수익률 그래프 영역 - Chart.js 연동 예정 ]</p>
+    </div>
+
+    <div class="history-section">
+        <h2>Trade History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Symbol</th>
+                    <th>Strategy</th>
+                    <th>Profit (%)</th>
+                    <th>Cumulative ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025-12-30</td>
+                    <td>EKSO</td>
+                    <td>익절 (전략가)</td>
+                    <td class="status-win">+3.0%</td>
+                    <td>$16,449.93</td>
+                </tr>
+                <tr>
+                    <td>2025-12-29</td>
+                    <td>DRMA</td>
+                    <td>익절 (전략가)</td>
+                    <td class="status-win">+3.0%</td>
+                    <td>$15,970.81</td>
+                </tr>
+                </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
